@@ -11,12 +11,16 @@ public class Login extends JFrame implements ActionListener { //JFrame is a swin
         setTitle("Automated Teller Machine");
         setLayout(null); //for creating custom layouts, layout is set to null.
 
+//        *** LAYOUT CREATION ***
+
         ImageIcon icon1 = new ImageIcon(ClassLoader.getSystemResource("icons/logo.jpg")); //the getSystemResource() method searches for the resource on the system classpath only. To search for a resource on the application classpath, you can use the ClassLoader.getResource() method instead.
         Image image1 = icon1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT); // for scaling the image, awt classes is used.
         ImageIcon icon2 = new ImageIcon(image1); // JLabel cannot take image, so image is converted into icon.
         JLabel label = new JLabel(icon2);
         label.setBounds(70,10,100,100); //For positioning the label, this function is used.
         add(label);
+
+//        *** FIELD CREATION ***
 
         JLabel intro_title = new JLabel("Welcome to ATM");
         intro_title.setFont(new Font("Oswald",Font.BOLD,38)); //For font the label, setFont method is used. inside it a object of Font class need to be created.
@@ -63,7 +67,6 @@ public class Login extends JFrame implements ActionListener { //JFrame is a swin
         add(signupbutton);
 
 
-
         getContentPane().setBackground(Color.WHITE); //The content pane is a container that holds all the components of the frame such as buttons, text fields, labels, etc.
 
 
@@ -74,11 +77,8 @@ public class Login extends JFrame implements ActionListener { //JFrame is a swin
         setVisible(true); // the frame is by default not visible to the user. that is why this function is called.
         setLocation(350,200); //the frame by default pops from origin(top left). To set a popping location, this method is used.
 
-
-
-
-
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) { // tells what action needs to be done after receiving the click in the button.
